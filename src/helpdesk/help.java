@@ -10,6 +10,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Xóchitl Garza
@@ -260,6 +262,8 @@ String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
     } catch (Exception e) {
         System.out.print(e.getMessage());
     }
+         JOptionPane.showMessageDialog(null, "Ticket Subido de manera Correcta", 
+"Listo...", JOptionPane.INFORMATION_MESSAGE);
            Abierto objeto = new Abierto();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
