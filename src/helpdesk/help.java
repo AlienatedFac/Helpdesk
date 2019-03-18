@@ -260,6 +260,10 @@ String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
     } catch (Exception e) {
         System.out.print(e.getMessage());
     }
+           Abierto objeto = new Abierto();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+        this.setVisible(false);
     
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -222,6 +222,7 @@ public class Abierto extends javax.swing.JFrame {
         cerrados objeto = new cerrados();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
+         this.setVisible(false);
     }//GEN-LAST:event_cerradosActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -229,6 +230,7 @@ public class Abierto extends javax.swing.JFrame {
            expirados objeto = new expirados();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
+            this.setVisible(false);
        
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -237,6 +239,7 @@ public class Abierto extends javax.swing.JFrame {
            editar objeto = new editar();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
+         this.setVisible(false);
     }//GEN-LAST:event_editActionPerformed
 
     private void abrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirActionPerformed
@@ -244,6 +247,7 @@ public class Abierto extends javax.swing.JFrame {
          help objeto = new help();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
+         this.setVisible(false);
     }//GEN-LAST:event_abrirActionPerformed
 
     /**

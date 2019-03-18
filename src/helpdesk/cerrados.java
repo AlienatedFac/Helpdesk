@@ -167,6 +167,7 @@ public class cerrados extends javax.swing.JFrame {
         expirados objeto = new expirados();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
+         this.setVisible(false);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
