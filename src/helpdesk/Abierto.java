@@ -24,7 +24,7 @@ public class Abierto extends javax.swing.JFrame {
         initComponents();
         mostrardatos("");
     }
-
+public static String Dato="";
     void mostrardatos(String valor){
     DefaultTableModel modelo= new DefaultTableModel();
     modelo.addColumn("ID");
@@ -133,8 +133,18 @@ public class Abierto extends javax.swing.JFrame {
         });
 
         estatus.setText("ID");
+        estatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estatusActionPerformed(evt);
+            }
+        });
 
         ver.setText("Ver Status");
+        ver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verActionPerformed(evt);
+            }
+        });
 
         editar.setText("ID");
 
@@ -250,6 +260,20 @@ public class Abierto extends javax.swing.JFrame {
         objeto.setVisible(true);
          this.setVisible(false);
     }//GEN-LAST:event_abrirActionPerformed
+
+    private void estatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estatusActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_estatusActionPerformed
+
+    private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
+        // TODO add your handling code here:
+ Dato = estatus.getText();
+         Estatus objeto = new Estatus();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_verActionPerformed
 
     /**
      * @param args the command line arguments
