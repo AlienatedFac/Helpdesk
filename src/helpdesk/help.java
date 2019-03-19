@@ -264,10 +264,10 @@ String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
          pst.setString(2, correo.getText());
         pst.setString(3, nombres.getText());
         pst.setString(4, (String) carrera.getSelectedItem());
-        pst.setString(5, (String) cuatrimestre.getSelectedItem());
-        pst.setString(6, (String) departamento.getSelectedItem());
-         pst.setString(7, (String) asigna.getSelectedItem());
-        pst.setString(8, (String) tema.getSelectedItem());
+      pst.setString(5, (String) cuatrimestre.getSelectedItem());
+      pst.setString(6, (String) departamento.getSelectedItem());
+      pst.setString(7, (String) asigna.getSelectedItem());
+      pst.setString(8, (String) tema.getSelectedItem());
       pst.setString(9, problema.getText());
         pst.executeUpdate();
     } catch (Exception e) {
