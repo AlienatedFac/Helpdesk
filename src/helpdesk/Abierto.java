@@ -34,6 +34,7 @@ public static String Dato="";
     modelo.addColumn("Carrera");
     modelo.addColumn("Cuatrimestre");
     modelo.addColumn("Departamento");
+    modelo.addColumn("Asignado a");
     modelo.addColumn("Tema");
     modelo.addColumn("Problema");
     tbproductos.setModel(modelo);
@@ -43,10 +44,10 @@ public static String Dato="";
         sql="SELECT * FROM abierto";
     }
     else{
-        sql="SELECT * FROM productos WHERE codigo='"+valor+"'";
+        sql="SELECT * FROM abierto WHERE Asignado='"+valor+"'";
     }
  
-    String []datos = new String [10];
+    String []datos = new String [11];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -60,6 +61,7 @@ public static String Dato="";
                 datos[6]=rs.getString(7);
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
+                 datos[9] = rs.getString(10);
                 modelo.addRow(datos);
             }
             tbproductos.setModel(modelo);
@@ -90,6 +92,8 @@ public static String Dato="";
         edit = new javax.swing.JButton();
         cerrar = new javax.swing.JTextField();
         close = new javax.swing.JButton();
+        close1 = new javax.swing.JButton();
+        asigna = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -159,6 +163,15 @@ public static String Dato="";
 
         close.setText("Cerrar");
 
+        close1.setText("Buscar");
+        close1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                close1ActionPerformed(evt);
+            }
+        });
+
+        asigna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Biotecnologia", "Sofware", "Fisioterapia", "Biomedica", "Direccion", "Web", "Sistemas" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -173,25 +186,34 @@ public static String Dato="";
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(134, 134, 134))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cerrados)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(abrir)
-                        .addGap(26, 26, 26)
-                        .addComponent(estatus, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ver)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                        .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(edit)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(close)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cerrados)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(abrir))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(close)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(asigna, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(estatus, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ver)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                                .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(edit)
+                                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(close1)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -217,7 +239,9 @@ public static String Dato="";
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(close))
+                    .addComponent(close)
+                    .addComponent(close1)
+                    .addComponent(asigna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -276,6 +300,13 @@ public static String Dato="";
          this.setVisible(false);
     }//GEN-LAST:event_verActionPerformed
 
+    private void close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close1ActionPerformed
+        // TODO add your handling code here:
+        String dato =(String) asigna.getSelectedItem();
+         mostrardatos(dato);
+         
+    }//GEN-LAST:event_close1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -314,9 +345,11 @@ public static String Dato="";
     Connection cn= cc.conexion();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrir;
+    private javax.swing.JComboBox<String> asigna;
     private javax.swing.JButton cerrados;
     private javax.swing.JTextField cerrar;
     private javax.swing.JButton close;
+    private javax.swing.JButton close1;
     private javax.swing.JButton edit;
     private javax.swing.JTextField editar;
     private javax.swing.JTextField estatus;
