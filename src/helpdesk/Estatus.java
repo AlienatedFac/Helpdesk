@@ -24,6 +24,7 @@ public class Estatus extends javax.swing.JFrame {
         initComponents();
         Abierto objeto= new Abierto();
     identificacion.setText(objeto.Dato);
+   mostrardatos("");
     
     }
       void mostrardatos(String valor){
@@ -31,14 +32,14 @@ public class Estatus extends javax.swing.JFrame {
     String id=identificacion.getText();
     if(valor.equals(""))
     {
-        sql="SELECT * FROM abierto WHERE ID=1";
+        sql="SELECT * FROM abierto WHERE ID= '"+id+"'";
     }
     else{
         sql="SELECT * FROM productos WHERE codigo='"+valor+"'";
     }
  String almacenamiento;
         try {
-             String []datos = new String [10];
+             String []datos = new String [9];
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
@@ -46,12 +47,20 @@ public class Estatus extends javax.swing.JFrame {
                 datos[1]=rs.getString(2);
                 Fecha.setText(rs.getString(2));
                 datos[2]=rs.getString(3);
+                correo.setText(rs.getString(3));
                 datos[3] = rs.getString(4);
+                nombre.setText(rs.getString(4));
                 datos[4]=rs.getString(5);
+                cuatrimestre.setText(rs.getString(5));
                 datos[5]=rs.getString(6);
+                carrera.setText(rs.getString(6));
                 datos[6]=rs.getString(7);
+                departamento.setText(rs.getString(7));
                 datos[7] = rs.getString(8);
-                datos[8] = rs.getString(9);
+                tema.setText(rs.getString(8));
+               datos[8] = rs.getString(9);
+                problem.setText(rs.getString(9));
+               
             }
             
          
@@ -75,11 +84,11 @@ public class Estatus extends javax.swing.JFrame {
         correo = new javax.swing.JLabel();
         nombre = new javax.swing.JLabel();
         cuatrimestre = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        carrera = new javax.swing.JLabel();
+        departamento = new javax.swing.JLabel();
+        tema = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        problem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,15 +102,15 @@ public class Estatus extends javax.swing.JFrame {
 
         cuatrimestre.setText("jLabel1");
 
-        jLabel6.setText("jLabel1");
+        carrera.setText("jLabel1");
 
-        jLabel7.setText("jLabel1");
+        departamento.setText("jLabel1");
 
-        jLabel8.setText("jLabel1");
-
-        jLabel9.setText("jLabel1");
+        tema.setText("jLabel1");
 
         jLabel10.setText("Problema");
+
+        problem.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,18 +120,20 @@ public class Estatus extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
-                                .addComponent(jLabel9))
+                                .addComponent(tema)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7))
+                                .addComponent(carrera)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
+                                .addComponent(departamento))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(correo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -150,15 +161,15 @@ public class Estatus extends javax.swing.JFrame {
                     .addComponent(cuatrimestre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(carrera)
+                    .addComponent(departamento))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                .addComponent(tema)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,15 +213,15 @@ conectar cc= new conectar();
     Connection cn= cc.conexion();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fecha;
+    private javax.swing.JLabel carrera;
     private javax.swing.JLabel correo;
     private javax.swing.JLabel cuatrimestre;
+    private javax.swing.JLabel departamento;
     private javax.swing.JLabel identificacion;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel nombre;
+    private javax.swing.JLabel problem;
+    private javax.swing.JLabel tema;
     // End of variables declaration//GEN-END:variables
 
 }
