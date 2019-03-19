@@ -1,9 +1,9 @@
 
 
-package HelpDesk;
+package helpdesk;
 
 
-public class HelpDesk{
+public class HDesk{
 
    
     public static void main(String[] args) {
