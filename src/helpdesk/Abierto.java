@@ -96,7 +96,7 @@ public static String Dato="";
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
         jLabel11.setText("jLabel11");
 
-        tbproductos.setForeground(new java.awt.Color(255, 102, 0));
+        tbproductos.setForeground(new java.awt.Color(0, 162, 217));
         tbproductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
