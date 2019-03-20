@@ -89,28 +89,44 @@ public class Estatus extends javax.swing.JFrame {
         tema = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         problem = new javax.swing.JLabel();
+        close = new javax.swing.JButton();
+        close1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        identificacion.setText("jLabel1");
+        identificacion.setText("ID");
 
-        Fecha.setText("jLabel1");
+        Fecha.setText("Fecha");
 
-        correo.setText("jLabel1");
+        correo.setText("Correo");
 
-        nombre.setText("jLabel1");
+        nombre.setText("Nombre");
 
-        cuatrimestre.setText("jLabel1");
+        cuatrimestre.setText("Cuatrimestre");
 
-        carrera.setText("jLabel1");
+        carrera.setText("Carrera");
 
-        departamento.setText("jLabel1");
+        departamento.setText("Departamento");
 
-        tema.setText("jLabel1");
+        tema.setText("Tema");
 
         jLabel10.setText("Problema");
 
-        problem.setText("jLabel1");
+        problem.setText("Problema Detallado");
+
+        close.setText("Cerrar");
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
+
+        close1.setText("Abiertos");
+        close1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                close1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,6 +137,41 @@ public class Estatus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
+                        .addGap(0, 31, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha)
+                            .addComponent(identificacion))
+                        .addGap(226, 226, 226))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cuatrimestre)
+                        .addGap(201, 201, 201))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(carrera, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tema, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(departamento)
+                        .addGap(194, 194, 194))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(correo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(close)
+                        .addGap(50, 50, 50)
+                        .addComponent(close1)))
+                .addGap(0, 0, Short.MAX_VALUE))
+=======
                         .addGap(0, 45, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -137,15 +188,16 @@ public class Estatus extends javax.swing.JFrame {
                             .addComponent(cuatrimestre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(departamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(76, 76, 76))))
+>>>>>>> 38ba5f8ed4e1f60d28071631b91651aab7a6e037
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(20, 20, 20)
                 .addComponent(identificacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Fecha)
-                .addGap(82, 82, 82)
+                .addGap(60, 60, 60)
                 .addComponent(correo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -155,17 +207,34 @@ public class Estatus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(carrera)
                     .addComponent(departamento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(15, 15, 15)
                 .addComponent(tema)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(close)
+                    .addComponent(close1))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close1ActionPerformed
+        // TODO add your handling code here:
+        Abierto objeto= new Abierto();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_close1ActionPerformed
+
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_closeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +275,8 @@ conectar cc= new conectar();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fecha;
     private javax.swing.JLabel carrera;
+    private javax.swing.JButton close;
+    private javax.swing.JButton close1;
     private javax.swing.JLabel correo;
     private javax.swing.JLabel cuatrimestre;
     private javax.swing.JLabel departamento;

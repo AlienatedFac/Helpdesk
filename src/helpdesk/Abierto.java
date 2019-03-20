@@ -47,7 +47,7 @@ public static String Dato="";
         sql="SELECT * FROM abierto WHERE Asignado='"+valor+"'";
     }
  
-    String []datos = new String [11];
+    String []datos = new String [13];
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -58,10 +58,10 @@ public static String Dato="";
                 datos[3] = rs.getString(4);
                 datos[4]=rs.getString(5);
                 datos[5]=rs.getString(6);
-                datos[6]=rs.getString(7);
+                datos[6]= rs.getString(7);
                 datos[7] = rs.getString(8);
                 datos[8] = rs.getString(9);
-                 datos[9] = rs.getString(10);
+                datos[9] = rs.getString(10);
                 modelo.addRow(datos);
             }
             tbproductos.setModel(modelo);
@@ -90,8 +90,6 @@ public static String Dato="";
         ver = new javax.swing.JButton();
         editar = new javax.swing.JTextField();
         edit = new javax.swing.JButton();
-        cerrar = new javax.swing.JTextField();
-        close = new javax.swing.JButton();
         close1 = new javax.swing.JButton();
         asigna = new javax.swing.JComboBox<>();
 
@@ -159,10 +157,6 @@ public static String Dato="";
             }
         });
 
-        cerrar.setText("ID");
-
-        close.setText("Cerrar");
-
         close1.setText("Buscar");
         close1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +164,7 @@ public static String Dato="";
             }
         });
 
-        asigna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Biotecnologia", "Sofware", "Fisioterapia", "Biomedica", "Direccion", "Web", "Sistemas" }));
+        asigna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Biotecnologia", "Software", "Fisioterapia", "Biomedica", "Direccion", "Web", "Sistemas" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,10 +188,7 @@ public static String Dato="";
                                 .addGap(18, 18, 18)
                                 .addComponent(abrir))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(close)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(200, 200, 200)
                                 .addComponent(asigna, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -205,7 +196,7 @@ public static String Dato="";
                                 .addComponent(estatus, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ver)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                                 .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(edit)
@@ -238,8 +229,6 @@ public static String Dato="";
                     .addComponent(edit))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(close)
                     .addComponent(close1)
                     .addComponent(asigna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90))
@@ -347,8 +336,6 @@ public static String Dato="";
     private javax.swing.JButton abrir;
     private javax.swing.JComboBox<String> asigna;
     private javax.swing.JButton cerrados;
-    private javax.swing.JTextField cerrar;
-    private javax.swing.JButton close;
     private javax.swing.JButton close1;
     private javax.swing.JButton edit;
     private javax.swing.JTextField editar;
