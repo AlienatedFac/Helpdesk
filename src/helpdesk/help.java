@@ -70,11 +70,16 @@ String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
 
         jLabel10.setText("Problema:");
 
+        correo.setBackground(new java.awt.Color(232, 247, 245));
         correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 correoActionPerformed(evt);
             }
         });
+
+        nombres.setBackground(new java.awt.Color(232, 247, 245));
+
+        problema.setBackground(new java.awt.Color(232, 247, 245));
 
         carrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingenieria en Software", "Ingeniera Financiera", "Gestion Empresarial", "Ingenieria en Biotecnologia", "Ingeniería Biomedica", "Fisioterapia" }));
         carrera.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +111,7 @@ String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
         jLabel11.setText("jLabel11");
         jLabel11.setPreferredSize(new java.awt.Dimension(379, 327));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 204));
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("ENVIAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
