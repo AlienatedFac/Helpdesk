@@ -27,85 +27,42 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="problem" min="-2" pref="528" max="-2" attributes="0"/>
-<<<<<<< HEAD
-                      <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
-=======
-                      <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
->>>>>>> 38ba5f8ed4e1f60d28071631b91651aab7a6e037
+                      <Component id="problem" min="-2" pref="367" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jLabel10" alignment="0" pref="174" max="32767" attributes="0"/>
-                          <Component id="tema" max="32767" attributes="0"/>
-                          <Component id="carrera" max="32767" attributes="0"/>
-                          <Component id="nombre" max="32767" attributes="0"/>
-                          <Component id="correo" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="correo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="carrera" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="asignado" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-<<<<<<< HEAD
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cuatrimestre" min="-2" max="-2" attributes="0"/>
                           <Component id="Fecha" min="-2" max="-2" attributes="0"/>
                           <Component id="identificacion" min="-2" max="-2" attributes="0"/>
+                          <Component id="departamento" min="-2" max="-2" attributes="0"/>
+                          <Component id="tema" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="nombre" min="-2" max="-2" attributes="0"/>
+                      <Component id="problema" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="cuatrimestre" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="carrera" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="tema" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="departamento" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-=======
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Fecha" pref="194" max="32767" attributes="0"/>
-                              <Component id="identificacion" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="cuatrimestre" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
-                          <Component id="departamento" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
->>>>>>> 38ba5f8ed4e1f60d28071631b91651aab7a6e037
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="correo" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="close" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="close1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="identificacion" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="Fecha" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Component id="correo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -117,18 +74,16 @@
                   <Component id="carrera" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="departamento" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Component id="tema" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="problem" min="-2" pref="84" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="close" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="close1" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="asignado" min="-2" max="-2" attributes="0"/>
+                  <Component id="tema" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="problema" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="problem" min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -169,36 +124,25 @@
         <Property name="text" type="java.lang.String" value="Departamento"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="asignado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Asignado"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JLabel" name="tema">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tema"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="problema">
       <Properties>
         <Property name="text" type="java.lang.String" value="Problema"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="problem">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Problema Detallado"/>
+        <Property name="text" type="java.lang.String" value="Correo"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="close">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cerrar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="closeActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="close1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Abiertos"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="close1ActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

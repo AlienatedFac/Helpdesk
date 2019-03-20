@@ -4,12 +4,19 @@
  * and open the template in the editor.
  */
 package helpdesk;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author ferna
@@ -19,8 +26,7 @@ public class Estatus extends javax.swing.JFrame {
     /**
      * Creates new form Estatus
      */
-    
-    public Estatus() {
+ public Estatus() {
         initComponents();
         Abierto objeto= new Abierto();
     identificacion.setText(objeto.Dato);
@@ -39,7 +45,7 @@ public class Estatus extends javax.swing.JFrame {
     }
  String almacenamiento;
         try {
-             String []datos = new String [9];
+             String []datos = new String [10];
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
@@ -57,10 +63,11 @@ public class Estatus extends javax.swing.JFrame {
                 datos[6]=rs.getString(7);
                 departamento.setText(rs.getString(7));
                 datos[7] = rs.getString(8);
-                tema.setText(rs.getString(8));
+                asignado.setText(rs.getString(8));
                datos[8] = rs.getString(9);
+                tema.setText(rs.getString(9));  
+               datos[9] = rs.getString(10);
                 problem.setText(rs.getString(9));
-               
             }
             
          
@@ -69,6 +76,7 @@ public class Estatus extends javax.swing.JFrame {
         }
     
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -86,11 +94,10 @@ public class Estatus extends javax.swing.JFrame {
         cuatrimestre = new javax.swing.JLabel();
         carrera = new javax.swing.JLabel();
         departamento = new javax.swing.JLabel();
+        asignado = new javax.swing.JLabel();
         tema = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        problema = new javax.swing.JLabel();
         problem = new javax.swing.JLabel();
-        close = new javax.swing.JButton();
-        close1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,25 +115,13 @@ public class Estatus extends javax.swing.JFrame {
 
         departamento.setText("Departamento");
 
+        asignado.setText("Asignado");
+
         tema.setText("Tema");
 
-        jLabel10.setText("Problema");
+        problema.setText("Problema");
 
-        problem.setText("Problema Detallado");
-
-        close.setText("Cerrar");
-        close.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                closeActionPerformed(evt);
-            }
-        });
-
-        close1.setText("Abiertos");
-        close1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                close1ActionPerformed(evt);
-            }
-        });
+        problem.setText("Correo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,68 +131,34 @@ public class Estatus extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                        .addGap(0, 31, Short.MAX_VALUE))
+                        .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 23, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(correo)
+                            .addComponent(nombre)
+                            .addComponent(carrera)
+                            .addComponent(asignado))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cuatrimestre)
                             .addComponent(Fecha)
-                            .addComponent(identificacion))
-                        .addGap(226, 226, 226))
+                            .addComponent(identificacion)
+                            .addComponent(departamento)
+                            .addComponent(tema))
+                        .addGap(141, 141, 141))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(nombre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cuatrimestre)
-                        .addGap(201, 201, 201))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(carrera, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tema, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(departamento)
-                        .addGap(194, 194, 194))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(correo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(close)
-                        .addGap(50, 50, 50)
-                        .addComponent(close1)))
-                .addGap(0, 0, Short.MAX_VALUE))
-=======
-                        .addGap(0, 45, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                            .addComponent(tema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(carrera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(correo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                                .addComponent(identificacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(cuatrimestre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(departamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(76, 76, 76))))
->>>>>>> 38ba5f8ed4e1f60d28071631b91651aab7a6e037
+                        .addComponent(problema)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(19, 19, 19)
                 .addComponent(identificacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Fecha)
-                .addGap(60, 60, 60)
+                .addGap(11, 11, 11)
                 .addComponent(correo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -207,34 +168,19 @@ public class Estatus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(carrera)
                     .addComponent(departamento))
-                .addGap(15, 15, 15)
-                .addComponent(tema)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(asignado)
+                    .addComponent(tema, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(close)
-                    .addComponent(close1))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addComponent(problema)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close1ActionPerformed
-        // TODO add your handling code here:
-        Abierto objeto= new Abierto();
-        objeto.setLocationRelativeTo(objeto);
-        objeto.setVisible(true);
-        this.setVisible(false);
-        
-    }//GEN-LAST:event_close1ActionPerformed
-
-    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_closeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,21 +216,19 @@ public class Estatus extends javax.swing.JFrame {
             }
         });
     }
-conectar cc= new conectar();
+  conectar cc= new conectar();
     Connection cn= cc.conexion();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fecha;
+    private javax.swing.JLabel asignado;
     private javax.swing.JLabel carrera;
-    private javax.swing.JButton close;
-    private javax.swing.JButton close1;
     private javax.swing.JLabel correo;
     private javax.swing.JLabel cuatrimestre;
     private javax.swing.JLabel departamento;
     private javax.swing.JLabel identificacion;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel problem;
+    private javax.swing.JLabel problema;
     private javax.swing.JLabel tema;
     // End of variables declaration//GEN-END:variables
-
 }
