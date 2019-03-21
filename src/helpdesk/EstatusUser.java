@@ -98,7 +98,6 @@ public class EstatusUser extends javax.swing.JFrame {
         tema = new javax.swing.JLabel();
         problema = new javax.swing.JLabel();
         problem = new javax.swing.JLabel();
-        close = new javax.swing.JButton();
         answer = new javax.swing.JButton();
         regreso = new javax.swing.JButton();
 
@@ -125,8 +124,6 @@ public class EstatusUser extends javax.swing.JFrame {
         problema.setText("Problema");
 
         problem.setText("Correo");
-
-        close.setText("Cerrar");
 
         answer.setText("Responder ");
         answer.addActionListener(new java.awt.event.ActionListener() {
@@ -165,8 +162,7 @@ public class EstatusUser extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(close)
-                                .addGap(18, 18, 18)
+                                .addGap(81, 81, 81)
                                 .addComponent(answer)
                                 .addGap(111, 111, 111)
                                 .addComponent(regreso)))
@@ -199,7 +195,6 @@ public class EstatusUser extends javax.swing.JFrame {
                 .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(close)
                     .addComponent(answer)
                     .addComponent(regreso))
                 .addContainerGap())
@@ -255,7 +250,6 @@ public class EstatusUser extends javax.swing.JFrame {
     private javax.swing.JButton answer;
     private javax.swing.JLabel asignado;
     private javax.swing.JLabel carrera;
-    private javax.swing.JButton close;
     private javax.swing.JLabel correo;
     private javax.swing.JLabel cuatrimestre;
     private javax.swing.JLabel departamento;
