@@ -21,15 +21,12 @@ import javax.swing.JOptionPane;
  *
  * @author ferna
  */
-public class Estatus extends javax.swing.JFrame {
+public class EstatusUser extends javax.swing.JFrame {
 
     /**
      * Creates new form Estatus
      */
-    public static String Mail;
-    public static String Correo;
-    
- public Estatus() {
+ public EstatusUser() {
         initComponents();
         Abierto objeto= new Abierto();
     identificacion.setText(objeto.Dato);
@@ -139,11 +136,6 @@ public class Estatus extends javax.swing.JFrame {
         });
 
         regreso.setText("Regresar");
-        regreso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                regresoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -218,26 +210,8 @@ public class Estatus extends javax.swing.JFrame {
 
     private void answerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerActionPerformed
         // TODO add your handling code here:
-     Window ventana = new Window();
-     Correo=correo.getText();
-     Mail=correo.getText();   
-     ventana.Username = "HelpdeskUPQROO@gmail.com";
-        ventana.PassWord = "sopademacaco123";
-        ventana.To=correo.getText();
-        
-        ventana.Subject=tema.getText();
-        ventana.setVisible(true);
-        this.dispose();
         
     }//GEN-LAST:event_answerActionPerformed
-
-    private void regresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresoActionPerformed
-        // TODO add your handling code here:
-        Abierto objeto=new Abierto();  
-          objeto.setLocationRelativeTo(objeto);
-          objeto.setVisible(true);
-          this.setVisible(false);
-    }//GEN-LAST:event_regresoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,20 +230,21 @@ public class Estatus extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Estatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstatusUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Estatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstatusUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Estatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstatusUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Estatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstatusUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Estatus().setVisible(true);
+                new EstatusUser().setVisible(true);
             }
         });
     }
