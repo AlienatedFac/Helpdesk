@@ -94,7 +94,7 @@ public static String Dato="";
         asigna = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 0, 51));
+        setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/descarga.png"))); // NOI18N
         jLabel11.setText("jLabel11");
