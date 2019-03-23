@@ -16,10 +16,11 @@ public class HelpDesk {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-     Abierto objeto = new Abierto();
+        Splash Pantalla = new Splash();
+      Pantalla.LoadingIt();
+    /* Abierto objeto = new Abierto();
         objeto.setLocationRelativeTo(objeto);
-        objeto.setVisible(true);
+        objeto.setVisible(true);*/
     }
     
 }
