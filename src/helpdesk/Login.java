@@ -1,11 +1,53 @@
 package helpdesk;
 
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
+import java.sql.*;
+import java.sql.Statement;
+import java.sql.ResultSet;
+
 
 public class Login extends javax.swing.JFrame {
 
+    conectar cc = new conectar();
+    Connection cn=cc.conexion();
+    
+    
     public Login() {
         initComponents();
+    }
+    
+    public void ValidAccess()
+    {
+        int resultx=0;
+        
+        try{
+            String Mtx=Matricula.getText();
+            String Passw=String.valueOf(Pass.getPassword());
+            
+            String SQL = "SELECT * FROM Usuarios WHERE Matricula='"+Mtx+"' && Password='"+Passw+"'";
+            
+            Statement st=cn.createStatement();
+            ResultSet rs=st.executeQuery(SQL);
+            
+            if(rs.next()){
+                resultx=1;
+                
+                if(resultx==1)
+                {
+                    Estatus Screen1=new Estatus();
+                    Screen1.setVisible(true);
+                    this.dispose();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "The data isn't correct.");
+                }
+            }
+        }
+        catch(HeadlessException | SQLException e)
+        {
+            JOptionPane.showMessageDialog(null, "The data isn't correct.");            
+        }      
     }
 
     @SuppressWarnings("unchecked")
@@ -16,8 +58,8 @@ public class Login extends javax.swing.JFrame {
         jLabel_inven1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField_Email = new javax.swing.JTextField();
-        jPasswordField_Password = new javax.swing.JPasswordField();
+        Matricula = new javax.swing.JTextField();
+        Pass = new javax.swing.JPasswordField();
         jButton7 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
@@ -58,26 +100,26 @@ public class Login extends javax.swing.JFrame {
         jLabel20.setText("Password");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 70, -1));
 
-        jTextField_Email.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        jTextField_Email.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField_Email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField_Email.setFocusTraversalPolicyProvider(true);
-        jTextField_Email.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        Matricula.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        Matricula.setForeground(new java.awt.Color(255, 255, 255));
+        Matricula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Matricula.setFocusTraversalPolicyProvider(true);
+        Matricula.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jTextField_EmailMouseMoved(evt);
+                MatriculaMouseMoved(evt);
             }
         });
-        jTextField_Email.addActionListener(new java.awt.event.ActionListener() {
+        Matricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_EmailActionPerformed(evt);
+                MatriculaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 205, 260, 40));
+        jPanel1.add(Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 205, 260, 40));
 
-        jPasswordField_Password.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        jPasswordField_Password.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField_Password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jPasswordField_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 305, 260, 40));
+        Pass.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        Pass.setForeground(new java.awt.Color(255, 255, 255));
+        Pass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 305, 260, 40));
 
         jButton7.setBackground(new java.awt.Color(0, 153, 204));
         jButton7.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -318,25 +360,16 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField_EmailMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_EmailMouseMoved
+    private void MatriculaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MatriculaMouseMoved
 
-    }//GEN-LAST:event_jTextField_EmailMouseMoved
+    }//GEN-LAST:event_MatriculaMouseMoved
 
-    private void jTextField_EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EmailActionPerformed
+    private void MatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatriculaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_EmailActionPerformed
+    }//GEN-LAST:event_MatriculaActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        String user = jTextField_Email.getText();
-        String pass = jPasswordField_Password.getText();
-
-        if(user.equals("admin") && pass.equals("123")){
-
-        }
-
-        else{
-            JOptionPane.showMessageDialog(null,"Email or Password Invalid");
-        }
+        ValidAccess();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -429,6 +462,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Matricula;
+    private javax.swing.JPasswordField Pass;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -450,12 +485,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPasswordField jPasswordField_Password;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField_Email;
     // End of variables declaration//GEN-END:variables
 }
