@@ -55,30 +55,23 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel_inven1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         Matricula = new javax.swing.JTextField();
-        Pass = new javax.swing.JPasswordField();
         jButton7 = new javax.swing.JButton();
+        Pass = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        jButton14 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jLabel_SoftZyd = new javax.swing.JLabel();
         jLabel_inven = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
         jTextField18 = new javax.swing.JTextField();
         jTextField21 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -88,17 +81,15 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_inven1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel_inven1.setText("Connect with us on");
-        jPanel1.add(jLabel_inven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 120, 20));
-
-        jLabel19.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Matrícula");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 70, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, -1));
 
-        jLabel20.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Password");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 70, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 90, -1));
 
         Matricula.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         Matricula.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,29 +105,32 @@ public class Login extends javax.swing.JFrame {
                 MatriculaActionPerformed(evt);
             }
         });
-        jPanel1.add(Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 205, 260, 40));
+        jPanel1.add(Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 260, 40));
 
-        Pass.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        Pass.setForeground(new java.awt.Color(255, 255, 255));
-        Pass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 305, 260, 40));
-
-        jButton7.setBackground(new java.awt.Color(0, 153, 204));
         jButton7.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(21, 25, 28));
-        jButton7.setText("Sign In");
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Acceder1.png"))); // NOI18N
         jButton7.setBorder(null);
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton7.setFocusPainted(false);
+        jButton7.setIconTextGap(9);
+        jButton7.setPreferredSize(new java.awt.Dimension(600, 100));
+        jButton7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Acceder2.png"))); // NOI18N
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 260, 40));
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 190, 40));
 
-        jButton1.setBackground(new java.awt.Color(169, 224, 49));
-        jButton1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Pass.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        Pass.setForeground(new java.awt.Color(255, 255, 255));
+        Pass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 260, 40));
+
+        jButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("¿Eres administrador?");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
@@ -149,31 +143,19 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 190, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 190, 30));
 
         jLabel21.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jLabel21.setText("He olvidado la conraseña");
         jLabel21.setToolTipText("");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 180, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 180, -1));
 
-        jButton14.setBackground(new java.awt.Color(169, 224, 49));
-        jButton14.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(169, 224, 49));
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Si Jala/icons8_Back_To_25px.png"))); // NOI18N
-        jButton14.setText("Back");
-        jButton14.setBorder(null);
-        jButton14.setContentAreaFilled(false);
-        jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton14.setRequestFocusEnabled(false);
-        jButton14.setVerifyInputWhenFocusTarget(false);
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 110, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 340, 640));
 
-        jPanel3.setBackground(new java.awt.Color(31, 36, 42));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel3.setMinimumSize(new java.awt.Dimension(500, 600));
+        jPanel3.setPreferredSize(new java.awt.Dimension(500, 600));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Si Jala/icons8_Cancel_32px.png"))); // NOI18N
@@ -189,7 +171,7 @@ public class Login extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 40, 40));
+        jPanel3.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 40, 40));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Si Jala/icons8_Minus_32px_1.png"))); // NOI18N
         jButton11.setToolTipText("Minimize");
@@ -210,7 +192,7 @@ public class Login extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 40, 40));
+        jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 40, 40));
 
         jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel_SoftZyd.setForeground(new java.awt.Color(169, 224, 49));
@@ -222,30 +204,8 @@ public class Login extends javax.swing.JFrame {
         jLabel_inven.setText("HelpDesk");
         jPanel3.add(jLabel_inven, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 380, 50));
 
-        jPanel7.setBackground(new java.awt.Color(31, 36, 42));
+        jPanel7.setBackground(new java.awt.Color(0, 102, 153));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField19.setBackground(new java.awt.Color(31, 36, 42));
-        jTextField19.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jTextField19.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(169, 224, 49)));
-        jTextField19.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jTextField19MouseMoved(evt);
-            }
-        });
-        jPanel7.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 160, 40));
-
-        jTextField20.setBackground(new java.awt.Color(31, 36, 42));
-        jTextField20.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jTextField20.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(169, 224, 49)));
-        jTextField20.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jTextField20MouseMoved(evt);
-            }
-        });
-        jPanel7.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 160, 40));
 
         jTextField18.setBackground(new java.awt.Color(31, 36, 42));
         jTextField18.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -269,36 +229,10 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel7.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, 40));
 
-        jTextField26.setBackground(new java.awt.Color(31, 36, 42));
-        jTextField26.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jTextField26.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(169, 224, 49)));
-        jTextField26.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jTextField26MouseMoved(evt);
-            }
-        });
-        jPanel7.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 330, 40));
-
-        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel14.setText("First Name");
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 90, 20));
-
-        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel15.setText("Last Name");
-        jPanel7.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 90, 20));
-
         jLabel18.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(169, 224, 49));
         jLabel18.setText("Password");
         jPanel7.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 314, -1));
-
-        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel17.setText("Confirm Password");
-        jPanel7.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 314, -1));
 
         jLabel16.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(169, 224, 49));
@@ -336,25 +270,24 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
 
-        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 410, 560));
+        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 410, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -380,43 +313,9 @@ public class Login extends javax.swing.JFrame {
         //       jLabel8.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        jPanel7.setVisible(false);
-        jLabel_SoftZyd.setVisible(true);
-        jLabel_inven.setVisible(true);
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-        this.setState(ICONIFIED);
-    }//GEN-LAST:event_jButton11MouseClicked
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jTextField19MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField19MouseMoved
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19MouseMoved
-
-    private void jTextField20MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField20MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField20MouseMoved
-
-    private void jTextField18MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField18MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18MouseMoved
-
-    private void jTextField21MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField21MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21MouseMoved
-
-    private void jTextField26MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField26MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField26MouseMoved
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         jPanel7.setVisible(false);
@@ -424,9 +323,25 @@ public class Login extends javax.swing.JFrame {
         jLabel_inven.setVisible(true);
     }//GEN-LAST:event_jButton16ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jTextField21MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField21MouseMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_jTextField21MouseMoved
+
+    private void jTextField18MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField18MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField18MouseMoved
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        this.setState(ICONIFIED);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -467,28 +382,21 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel_SoftZyd;
     private javax.swing.JLabel jLabel_inven;
-    private javax.swing.JLabel jLabel_inven1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField26;
     // End of variables declaration//GEN-END:variables
 }
