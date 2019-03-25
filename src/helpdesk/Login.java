@@ -5,10 +5,14 @@ import javax.swing.JOptionPane;
 import java.sql.*;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Login extends javax.swing.JFrame {
-
+public static String asignado;
+public static String dato;
+public static String mail;
     conectar cc = new conectar();
     Connection cn=cc.conexion();
     
@@ -25,7 +29,7 @@ public class Login extends javax.swing.JFrame {
             String Mtx=Matricula.getText();
             String Passw=String.valueOf(Pass.getPassword());
             
-            String SQL = "SELECT * FROM Usuarios WHERE Matricula='"+Mtx+"' && Password='"+Passw+"'";
+            String SQL = "SELECT * FROM usuarios WHERE Matricula='"+Mtx+"' && password='"+Passw+"'";
             
             Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery(SQL);
@@ -35,10 +39,65 @@ public class Login extends javax.swing.JFrame {
                 
                 if(resultx==1)
                 {
-                    Estatus Screen1=new Estatus();
+                      SQL="SELECT tipo FROM usuarios WHERE Matricula='"+Mtx+"' && password='"+Passw+"'";
+    
+    
+ 
+
+    String encargado;
+        try {
+            Statement st1 = cn.createStatement();
+            ResultSet rs1 = st.executeQuery(SQL);
+            while(rs1.next()){
+                
+                dato=rs1.getString(1);
+           if(dato.equals("admin"))
+            {
+            SQL="SELECT encargado FROM usuarios WHERE Matricula='"+Mtx+"' && password='"+Passw+"'";       
+            Statement st2 = cn.createStatement();
+            ResultSet rs2 = st.executeQuery(SQL);
+            while(rs2.next()){
+                
+                encargado=rs2.getString(1);
+                asignado=encargado;
+                 Abierto Screen1=new Abierto();
                     Screen1.setVisible(true);
                     this.dispose();
-                }
+                  }
+                    
+               
+         
+            }
+           
+               if(dato.equals("usuario"))
+            {
+             SQL="SELECT correos FROM usuarios WHERE Matricula='"+Mtx+"' && password='"+Passw+"'";       
+            Statement st3 = cn.createStatement();
+            ResultSet rs3 = st.executeQuery(SQL);
+            while(rs3.next()){
+                String correo;
+                correo=rs3.getString(1);
+                mail=correo;
+                 AbiertoUser Screen1=new AbiertoUser();
+                    Screen1.setVisible(true);
+                    this.dispose();
+                  }
+                    
+               
+         
+            
+            }
+           }
+             
+            
+           
+            
+                    
+                }catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        
                 else{
                     JOptionPane.showMessageDialog(null, "The data isn't correct.");
                 }

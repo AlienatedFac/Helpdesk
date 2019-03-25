@@ -26,11 +26,50 @@ public class EstatusUser extends javax.swing.JFrame {
     /**
      * Creates new form Estatus
      */
+    public static String Mail;
+    public static String Correo;
+    public static String asign;
+    public static String ID;
  public EstatusUser() {
         initComponents();
-        Abierto objeto= new Abierto();
+        
+        AbiertoUser objeto= new AbiertoUser();
     identificacion.setText(objeto.Dato);
+    ID=objeto.Dato;
+    
+    asign=objeto.kk;
    mostrardatos("");
+   mostrardatos1(ID); 
+    }
+ void mostrardatos1(String valor){
+    DefaultTableModel modelo= new DefaultTableModel();
+    modelo.addColumn("Fecha");
+    modelo.addColumn("Respuesta");
+    modelo.addColumn("Respondio");
+    tbproductos.setModel(modelo);
+    String sql="";
+    if(valor.equals(""))
+    {
+        sql="SELECT * FROM abierto";
+    }
+    else{
+        sql="SELECT * FROM respuestas WHERE ID='"+valor+"'";
+    }
+ 
+    String []datos = new String [3];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                datos[0]=rs.getString(3);
+                datos[1]=rs.getString(4);
+                datos[2]=rs.getString(5);
+                modelo.addRow(datos);
+            }
+            tbproductos.setModel(modelo);
+        } catch (SQLException ex) {
+            Logger.getLogger(Abierto.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
     }
       void mostrardatos(String valor){
@@ -100,6 +139,8 @@ public class EstatusUser extends javax.swing.JFrame {
         problem = new javax.swing.JLabel();
         answer = new javax.swing.JButton();
         regreso = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbproductos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,6 +174,27 @@ public class EstatusUser extends javax.swing.JFrame {
         });
 
         regreso.setText("Regresar");
+        regreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresoActionPerformed(evt);
+            }
+        });
+
+        tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbproductos.setForeground(new java.awt.Color(153, 111, 39));
+        tbproductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tbproductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tbproductos.setGridColor(new java.awt.Color(153, 102, 0));
+        tbproductos.setSelectionBackground(new java.awt.Color(204, 195, 151));
+        tbproductos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(tbproductos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,17 +218,15 @@ public class EstatusUser extends javax.swing.JFrame {
                             .addComponent(tema))
                         .addGap(141, 141, 141))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(problema)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(problema)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(81, 81, 81)
                                 .addComponent(answer)
-                                .addGap(111, 111, 111)
-                                .addComponent(regreso)))
-                        .addGap(0, 23, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(regreso))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+                            .addComponent(problem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(36, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +253,9 @@ public class EstatusUser extends javax.swing.JFrame {
                 .addComponent(problema)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(answer)
                     .addComponent(regreso))
@@ -205,8 +267,26 @@ public class EstatusUser extends javax.swing.JFrame {
 
     private void answerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerActionPerformed
         // TODO add your handling code here:
+     Window ventana = new Window();
+     Correo=correo.getText();
+     Mail=correo.getText();   
+     ventana.Username = "HelpdeskUPQROO@gmail.com";
+        ventana.PassWord = "sopademacaco123";
+        ventana.To=correo.getText();
+        
+        ventana.Subject=tema.getText();
+        ventana.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_answerActionPerformed
+
+    private void regresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresoActionPerformed
+        // TODO add your handling code here:
+        AbiertoUser objeto=new AbiertoUser();  
+          objeto.setLocationRelativeTo(objeto);
+          objeto.setVisible(true);
+          this.setVisible(false);
+    }//GEN-LAST:event_regresoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,10 +334,12 @@ public class EstatusUser extends javax.swing.JFrame {
     private javax.swing.JLabel cuatrimestre;
     private javax.swing.JLabel departamento;
     private javax.swing.JLabel identificacion;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel problem;
     private javax.swing.JLabel problema;
     private javax.swing.JButton regreso;
+    private javax.swing.JTable tbproductos;
     private javax.swing.JLabel tema;
     // End of variables declaration//GEN-END:variables
 }

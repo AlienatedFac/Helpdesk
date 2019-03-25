@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package helpdesk;
+import static helpdesk.Abierto.kk;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +21,10 @@ public class cerrados extends javax.swing.JFrame {
      */
     public cerrados() {
         initComponents();
-        mostrardatos("");
+           Login objeto=new Login();
+        
+      kk= objeto.asignado;
+        mostrardatos(kk);
     }
   void mostrardatos(String valor){
     DefaultTableModel modelo= new DefaultTableModel();
@@ -43,7 +47,7 @@ public class cerrados extends javax.swing.JFrame {
         sql="SELECT * FROM cerrado";
     }
     else{
-        sql="SELECT * FROM productos WHERE codigo='"+valor+"'";
+        sql="SELECT * FROM cerrado WHERE asignado='"+valor+"'";
     }
  
     String []datos = new String [12];
@@ -218,6 +222,9 @@ public class cerrados extends javax.swing.JFrame {
 
     private void abiertosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abiertosActionPerformed
         // TODO add your handling code here:
+        Abierto objeto=new Abierto();
+        objeto.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_abiertosActionPerformed
 
     /**

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package helpdesk;
+import static helpdesk.Window.To;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,9 +21,13 @@ public class Abierto extends javax.swing.JFrame {
     /**
      * Creates new form Abierto
      */
+    public static String kk;
     public Abierto() {
         initComponents();
-        mostrardatos("");
+        Login objeto=new Login();
+        
+      kk= objeto.asignado;
+        mostrardatos(kk);
     }
 public static String Dato="";
     void mostrardatos(String valor){
@@ -328,11 +333,23 @@ public static String Dato="";
 
     private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
         // TODO add your handling code here:
+        
  Dato = estatus.getText();
-         Estatus objeto = new Estatus();
+ if(Dato!="")
+ {
+     if(Dato!="ID")
+     {
+             Estatus objeto = new Estatus();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
-         this.setVisible(false);
+         this.setVisible(false); 
+     }
+     
+ }
+ else{
+     JOptionPane.showMessageDialog(this, "La opcion seleccionada no es correcta");
+ }
+    
     }//GEN-LAST:event_verActionPerformed
 
     private void close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close1ActionPerformed

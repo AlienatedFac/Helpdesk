@@ -1,5 +1,8 @@
 package helpdesk;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Calendar;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -14,6 +17,7 @@ public class Window extends javax.swing.JFrame {
     public static String Username = "";
     public static String PassWord = "";
     String Mensage = "";
+     String MensageBD = "";
     public static String To = "";
      public static String Subject = "";
 
@@ -49,9 +53,9 @@ public class Window extends javax.swing.JFrame {
     }
 
     public Window() {
-        Estatus objeto= new Estatus();
+        
         initComponents();
-        System.out.println ((String) objeto.Correo);
+       
         jTextAreaMessage.setLineWrap(true); //Se logra que haya salto de línea en el TextArea
         jTextAreaMessage.setWrapStyleWord(true); //Se impide la división de palabras en el TestArea
     }
@@ -168,15 +172,75 @@ public class Window extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        //Se recoge la información y se envía el email
-        Mensage = jTextAreaMessage.getText();
+        
+//Se recoge la información y se envía el email
+Login tip=new Login();
+String tipe=tip.dato;
+if(tipe.equals("admin"))
+{
+    Estatus dato=new Estatus();
+        
+Mensage = jTextAreaMessage.getText()+
+        " "+ "Respondio: Encargado de "+dato.asign;
+        
         SendMail();
-       
+     
+   //Interaccion BDD
+   MensageBD = jTextAreaMessage.getText();
+Calendar cal=Calendar.getInstance(); 
+
+String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
+Estatus object=new Estatus();
+String Iden=object.ID;
+Login objeto=new Login();
+String tipo=objeto.dato;
+try {
+        PreparedStatement pst = cn.prepareStatement("INSERT INTO respuestas(ID,hora, respuesta, tipo) VALUES (?,?,?,?)");
+        pst.setString(1,Iden );
+         pst.setString(2, date);
+        pst.setString(3, MensageBD);
+        pst.setString(4, tipo);
+        pst.executeUpdate();
+    } catch (Exception e) {
+        System.out.print(e.getMessage());
+    }
+}
+   //Cuando es un usuario solo sube a la BDD no llega por correo
+if(tipe.equals("usuario"))
+    
+{
+     MensageBD = jTextAreaMessage.getText();
+Calendar cal=Calendar.getInstance(); 
+
+String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
+EstatusUser object=new EstatusUser();
+String Iden=object.ID;
+Login objeto=new Login();
+String tipo=objeto.dato;
+try {
+        PreparedStatement pst = cn.prepareStatement("INSERT INTO respuestas(ID,hora, respuesta, tipo) VALUES (?,?,?,?)");
+        pst.setString(1,Iden );
+         pst.setString(2, date);
+        pst.setString(3, MensageBD);
+        pst.setString(4, tipo);
+        pst.executeUpdate();
+    } catch (Exception e) {
+        System.out.print(e.getMessage());
+    }
+ JOptionPane.showMessageDialog(this, "Su respuesta ha sido enviada correctamente al encargado ");
+}
+
+           
+        
+        
+   
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
     private void jButtonLimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiar1ActionPerformed
         // TODO add your handling code here:
-        if(Username=="HelpdeskUPQROO@gmail.com")
+        Login obj=new Login();
+        
+        if(obj.dato.equals("admin"))
         {
           Estatus objeto=new Estatus();  
           objeto.setLocationRelativeTo(objeto);
@@ -184,7 +248,7 @@ public class Window extends javax.swing.JFrame {
           this.setVisible(false);
           
         }
-        else
+         if(obj.dato.equals("usuario"))
         {
           EstatusUser objeto=new EstatusUser();  
           objeto.setLocationRelativeTo(objeto);
@@ -229,7 +293,8 @@ public class Window extends javax.swing.JFrame {
             }
         });
     }
-
+ conectar cc= new conectar();
+    Connection cn= cc.conexion();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel correo;
     private javax.swing.JButton jButtonCancelar;

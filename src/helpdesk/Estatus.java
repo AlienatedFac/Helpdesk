@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -28,12 +29,48 @@ public class Estatus extends javax.swing.JFrame {
      */
     public static String Mail;
     public static String Correo;
-    
+    public static String asign;
+    public static String ID;
  public Estatus() {
         initComponents();
+        
         Abierto objeto= new Abierto();
     identificacion.setText(objeto.Dato);
+    ID=objeto.Dato;
+    
+    asign=objeto.kk;
    mostrardatos("");
+   mostrardatos1(ID); 
+    }
+ void mostrardatos1(String valor){
+    DefaultTableModel modelo= new DefaultTableModel();
+    modelo.addColumn("Fecha");
+    modelo.addColumn("Respuesta");
+    modelo.addColumn("Respondio");
+    tbproductos.setModel(modelo);
+    String sql="";
+    if(valor.equals(""))
+    {
+        sql="SELECT * FROM abierto";
+    }
+    else{
+        sql="SELECT * FROM respuestas WHERE ID='"+valor+"'";
+    }
+ 
+    String []datos = new String [3];
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                datos[0]=rs.getString(3);
+                datos[1]=rs.getString(4);
+                datos[2]=rs.getString(5);
+                modelo.addRow(datos);
+            }
+            tbproductos.setModel(modelo);
+        } catch (SQLException ex) {
+            Logger.getLogger(Abierto.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
     }
       void mostrardatos(String valor){
@@ -132,6 +169,11 @@ public class Estatus extends javax.swing.JFrame {
         problem.setText("Correo");
 
         close.setText("Cerrar");
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
 
         answer.setText("Responder ");
         answer.addActionListener(new java.awt.event.ActionListener() {
@@ -257,6 +299,43 @@ public class Estatus extends javax.swing.JFrame {
           objeto.setVisible(true);
           this.setVisible(false);
     }//GEN-LAST:event_regresoActionPerformed
+
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        // TODO add your handling code here:
+        try {
+            Calendar cal=Calendar.getInstance(); 
+String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
+        PreparedStatement pst = cn.prepareStatement("INSERT INTO cerrado(ID, Fecha,correo,Nombres,Carrera,Cuatrimestre, Departamento, Asignado, Tema, Problema, FechaC) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+        pst.setString(1, identificacion.getText());
+         pst.setString(2, Fecha.getText());
+        pst.setString(3, correo.getText());
+        pst.setString(4, (String) nombre.getText());
+      pst.setString(5, (String) carrera.getText());
+      pst.setString(6, (String) cuatrimestre.getText());
+      pst.setString(7, (String) departamento.getText());
+      pst.setString(8, (String) asignado.getText());
+      pst.setString(9, tema.getText());
+       pst.setString(10, problema.getText());
+       pst.setString(11, date);
+        pst.executeUpdate();
+    } catch (Exception e) {
+        System.out.print(e.getMessage());
+    }
+        String SQL="";
+   
+        SQL="DELETE FROM abierto WHERE ID='"+identificacion.getText()+"' ";
+        try {
+      PreparedStatement preparedStmt = cn.prepareStatement(SQL);
+      preparedStmt.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(Estatus.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+         JOptionPane.showMessageDialog(null, "Ticket Cerrado de manera Correcta", 
+"Listo...", JOptionPane.INFORMATION_MESSAGE);
+     
+        
+    }//GEN-LAST:event_closeActionPerformed
 
     /**
      * @param args the command line arguments
