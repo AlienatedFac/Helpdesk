@@ -104,6 +104,8 @@ public class Estatus extends javax.swing.JFrame {
         close = new javax.swing.JButton();
         answer = new javax.swing.JButton();
         regreso = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbproductos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,6 +147,22 @@ public class Estatus extends javax.swing.JFrame {
             }
         });
 
+        tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbproductos.setForeground(new java.awt.Color(153, 111, 39));
+        tbproductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tbproductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tbproductos.setGridColor(new java.awt.Color(153, 102, 0));
+        tbproductos.setSelectionBackground(new java.awt.Color(204, 195, 151));
+        tbproductos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(tbproductos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,18 +185,17 @@ public class Estatus extends javax.swing.JFrame {
                             .addComponent(tema))
                         .addGap(141, 141, 141))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(problema)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(problema)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(close)
                                 .addGap(18, 18, 18)
                                 .addComponent(answer)
                                 .addGap(111, 111, 111)
-                                .addComponent(regreso)))
-                        .addGap(0, 23, Short.MAX_VALUE))))
+                                .addComponent(regreso))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+                            .addComponent(problem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(36, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +222,9 @@ public class Estatus extends javax.swing.JFrame {
                 .addComponent(problema)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(close)
                     .addComponent(answer)
@@ -285,10 +304,12 @@ public class Estatus extends javax.swing.JFrame {
     private javax.swing.JLabel cuatrimestre;
     private javax.swing.JLabel departamento;
     private javax.swing.JLabel identificacion;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel problem;
     private javax.swing.JLabel problema;
     private javax.swing.JButton regreso;
+    private javax.swing.JTable tbproductos;
     private javax.swing.JLabel tema;
     // End of variables declaration//GEN-END:variables
 }
