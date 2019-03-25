@@ -51,6 +51,7 @@ public static String mail;
             while(rs1.next()){
                 
                 dato=rs1.getString(1);
+               }
            if(dato.equals("admin"))
             {
             SQL="SELECT encargado FROM usuarios WHERE Matricula='"+Mtx+"' && password='"+Passw+"'";       
@@ -62,6 +63,9 @@ public static String mail;
                 asignado=encargado;
                  Abierto Screen1=new Abierto();
                     Screen1.setVisible(true);
+                   st2.close();
+                    st1.close();
+                    
                     this.dispose();
                   }
                     
@@ -87,7 +91,7 @@ public static String mail;
          
             
             }
-           }
+           
              
             
            
