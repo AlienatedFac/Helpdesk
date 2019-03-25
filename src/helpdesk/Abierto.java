@@ -115,7 +115,6 @@ public static String Dato="";
 
         cerrados.setBackground(new java.awt.Color(204, 191, 148));
         cerrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sistema_Locked_35452.png"))); // NOI18N
-        cerrados.setText("Cerrados");
         cerrados.setBorder(null);
         cerrados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cerrados.addActionListener(new java.awt.event.ActionListener() {
