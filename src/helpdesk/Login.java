@@ -66,8 +66,6 @@ public class Login extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jLabel_SoftZyd = new javax.swing.JLabel();
-        jLabel_inven = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jTextField18 = new javax.swing.JTextField();
         jTextField21 = new javax.swing.JTextField();
@@ -75,6 +73,8 @@ public class Login extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jLabel_SoftZyd = new javax.swing.JLabel();
+        jLabel_inven = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,16 +194,6 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 40, 40));
 
-        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel_SoftZyd.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel_SoftZyd.setText("GAP Soft");
-        jPanel3.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 314, -1));
-
-        jLabel_inven.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
-        jLabel_inven.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel_inven.setText("HelpDesk");
-        jPanel3.add(jLabel_inven, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 380, 50));
-
         jPanel7.setBackground(new java.awt.Color(0, 102, 153));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -269,6 +259,16 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
+
+        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel_SoftZyd.setForeground(new java.awt.Color(169, 224, 49));
+        jLabel_SoftZyd.setText("GAP Soft");
+        jPanel7.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 314, -1));
+
+        jLabel_inven.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
+        jLabel_inven.setForeground(new java.awt.Color(169, 224, 49));
+        jLabel_inven.setText("HelpDesk");
+        jPanel7.add(jLabel_inven, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 380, 50));
 
         jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 410, 560));
 

@@ -98,9 +98,9 @@ public static String Dato="";
         setBackground(new java.awt.Color(204, 0, 51));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setOpaque(false);
 
-        jLabel11.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/uni.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Abierto.png"))); // NOI18N
         jLabel11.setText("jLabel11");
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro", 1, 68)); // NOI18N
@@ -211,8 +211,8 @@ public static String Dato="";
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(156, 156, 156)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(171, 171, 171))
@@ -239,7 +239,7 @@ public static String Dato="";
                 .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(113, 113, 113))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(101, 101, 101))
         );
@@ -248,12 +248,13 @@ public static String Dato="";
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel11))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel11)
+                        .addGap(27, 27, 27)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -264,7 +265,7 @@ public static String Dato="";
                     .addComponent(ver, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(close1)
@@ -278,69 +279,75 @@ public static String Dato="";
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        // TODO add your handling code here:
+        editar objeto = new editar();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_editActionPerformed
+
+    private void close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close1ActionPerformed
+        // TODO add your handling code here:
+        String dato =(String) asigna.getSelectedItem();
+        mostrardatos(dato);
+
+    }//GEN-LAST:event_close1ActionPerformed
+
+    private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
+        // TODO add your handling code here:
+        Dato = estatus.getText();
+        Estatus objeto = new Estatus();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_verActionPerformed
+
+    private void estatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estatusActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_estatusActionPerformed
+
+    private void abrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirActionPerformed
+        // TODO add your handling code here:
+        help objeto = new help();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_abrirActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        expirados objeto = new expirados();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+ULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+    }// </editor-fold>                        
 
     private void cerradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerradosActionPerformed
         // TODO add your handling code here:
         cerrados objeto = new cerrados();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
-         this.setVisible(false);
+        this.setVisible(false);
     }//GEN-LAST:event_cerradosActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-           expirados objeto = new expirados();
-        objeto.setLocationRelativeTo(objeto);
-        objeto.setVisible(true);
-            this.setVisible(false);
-       
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
-           editar objeto = new editar();
-        objeto.setLocationRelativeTo(objeto);
-        objeto.setVisible(true);
-         this.setVisible(false);
-    }//GEN-LAST:event_editActionPerformed
-
-    private void abrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirActionPerformed
-        // TODO add your handling code here:
-         help objeto = new help();
-        objeto.setLocationRelativeTo(objeto);
-        objeto.setVisible(true);
-         this.setVisible(false);
-    }//GEN-LAST:event_abrirActionPerformed
-
-    private void estatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estatusActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_estatusActionPerformed
-
-    private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
-        // TODO add your handling code here:
- Dato = estatus.getText();
-         Estatus objeto = new Estatus();
-        objeto.setLocationRelativeTo(objeto);
-        objeto.setVisible(true);
-         this.setVisible(false);
-    }//GEN-LAST:event_verActionPerformed
-
-    private void close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close1ActionPerformed
-        // TODO add your handling code here:
-        String dato =(String) asigna.getSelectedItem();
-         mostrardatos(dato);
-         
-    }//GEN-LAST:event_close1ActionPerformed
 
     /**
      * @param args the command line arguments
