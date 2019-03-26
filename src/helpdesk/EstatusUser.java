@@ -143,28 +143,40 @@ public class EstatusUser extends javax.swing.JFrame {
         tbproductos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         identificacion.setText("ID");
+        getContentPane().add(identificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 19, -1, -1));
 
         Fecha.setText("Fecha");
+        getContentPane().add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 44, -1, -1));
 
         correo.setText("Correo");
+        getContentPane().add(correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 69, -1, -1));
 
         nombre.setText("Nombre");
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, -1, -1));
 
         cuatrimestre.setText("Cuatrimestre");
+        getContentPane().add(cuatrimestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 89, -1, -1));
 
         carrera.setText("Carrera");
+        getContentPane().add(carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 109, -1, -1));
 
         departamento.setText("Departamento");
+        getContentPane().add(departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 109, -1, -1));
 
         asignado.setText("Asignado");
+        getContentPane().add(asignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 129, -1, -1));
 
         tema.setText("Tema");
+        getContentPane().add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 129, -1, -1));
 
         problema.setText("Problema");
+        getContentPane().add(problema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 161, -1, -1));
 
         problem.setText("Correo");
+        getContentPane().add(problem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 181, 381, 73));
 
         answer.setText("Responder ");
         answer.addActionListener(new java.awt.event.ActionListener() {
@@ -172,13 +184,16 @@ public class EstatusUser extends javax.swing.JFrame {
                 answerActionPerformed(evt);
             }
         });
+        getContentPane().add(answer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 419, -1, -1));
 
-        regreso.setText("Regresar");
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Regresar-Boton1.png"))); // NOI18N
+        regreso.setContentAreaFilled(false);
         regreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 regresoActionPerformed(evt);
             }
         });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 419, -1, -1));
 
         tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbproductos.setForeground(new java.awt.Color(153, 111, 39));
@@ -196,71 +211,7 @@ public class EstatusUser extends javax.swing.JFrame {
         tbproductos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tbproductos);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(correo)
-                            .addComponent(nombre)
-                            .addComponent(carrera)
-                            .addComponent(asignado))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cuatrimestre)
-                            .addComponent(Fecha)
-                            .addComponent(identificacion)
-                            .addComponent(departamento)
-                            .addComponent(tema))
-                        .addGap(141, 141, 141))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(problema)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(answer)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(regreso))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
-                            .addComponent(problem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(36, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(identificacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Fecha)
-                .addGap(11, 11, 11)
-                .addComponent(correo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombre)
-                    .addComponent(cuatrimestre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(carrera)
-                    .addComponent(departamento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(asignado)
-                    .addComponent(tema, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(problema)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(problem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(answer)
-                    .addComponent(regreso))
-                .addContainerGap())
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 381, 125));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -19,6 +19,7 @@ public static String mail;
     
     public Login() {
         initComponents();
+        jPanel3.setVisible(false);
     }
     
     public void ValidAccess()
@@ -40,10 +41,7 @@ public static String mail;
                 if(resultx==1)
                 {
                       SQL="SELECT tipo FROM usuarios WHERE Matricula='"+Mtx+"' && password='"+Passw+"'";
-    
-    
  
-
     String encargado;
         try {
             Statement st1 = cn.createStatement();
@@ -68,9 +66,7 @@ public static String mail;
                     
                     this.dispose();
                   }
-                    
-               
-         
+        
             }
            
                if(dato.equals("usuario"))
@@ -86,22 +82,11 @@ public static String mail;
                     Screen1.setVisible(true);
                     this.dispose();
                   }
-                    
-               
-         
-            
             }
-           
-             
-            
-           
-            
-                    
                 }catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
-        
                 else{
                     JOptionPane.showMessageDialog(null, "The data isn't correct.");
                 }
@@ -119,8 +104,8 @@ public static String mail;
 
         jPanel1 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         Matricula = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         Pass = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
@@ -129,17 +114,22 @@ public static String mail;
         jPanel3 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-        jLabel_SoftZyd = new javax.swing.JLabel();
-        jLabel_inven = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -147,16 +137,10 @@ public static String mail;
         jLabel19.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Matrícula");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 200, 80, -1));
 
-        jLabel20.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Password");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 90, -1));
-
-        Matricula.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        Matricula.setForeground(new java.awt.Color(255, 255, 255));
-        Matricula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Matricula.setFont(new java.awt.Font("Agency FB", 2, 24)); // NOI18N
+        Matricula.setBorder(null);
         Matricula.setFocusTraversalPolicyProvider(true);
         Matricula.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -168,7 +152,12 @@ public static String mail;
                 MatriculaActionPerformed(evt);
             }
         });
-        jPanel1.add(Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 260, 40));
+        jPanel1.add(Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 260, 40));
+
+        jLabel20.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Password");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 310, 90, -1));
 
         jButton7.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Acceder1.png"))); // NOI18N
@@ -185,12 +174,11 @@ public static String mail;
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 190, 40));
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 190, 40));
 
         Pass.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        Pass.setForeground(new java.awt.Color(255, 255, 255));
-        Pass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 260, 40));
+        Pass.setBorder(null);
+        jPanel1.add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 260, 40));
 
         jButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,17 +194,19 @@ public static String mail;
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 190, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 190, 30));
 
-        jLabel21.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel21.setText("He olvidado la conraseña");
+        jLabel21.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("He olvidado la contraseña");
         jLabel21.setToolTipText("");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 180, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 210, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 340, 640));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 340, 650));
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 338, 625));
+
         jPanel3.setMinimumSize(new java.awt.Dimension(500, 600));
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 600));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -257,101 +247,56 @@ public static String mail;
         });
         jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 40, 40));
 
-        jPanel7.setBackground(new java.awt.Color(0, 102, 153));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField18.setBackground(new java.awt.Color(31, 36, 42));
-        jTextField18.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jTextField18.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(169, 224, 49)));
-        jTextField18.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jTextField18MouseMoved(evt);
-            }
-        });
-        jPanel7.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 330, 40));
-
-        jTextField21.setBackground(new java.awt.Color(31, 36, 42));
-        jTextField21.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jTextField21.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(169, 224, 49)));
-        jTextField21.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jTextField21MouseMoved(evt);
-            }
-        });
-        jPanel7.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, 40));
-
-        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel18.setText("Password");
-        jPanel7.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 314, -1));
-
-        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(169, 224, 49));
+        jLabel16.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Email");
-        jPanel7.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 314, -1));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 314, -1));
 
-        jButton16.setBackground(new java.awt.Color(169, 224, 49));
+        jLabel18.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Password");
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 314, -1));
+
+        jButton8.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Acceder1.png"))); // NOI18N
+        jButton8.setBorder(null);
+        jButton8.setContentAreaFilled(false);
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton8.setFocusPainted(false);
+        jButton8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Acceder2.png"))); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 330, 40));
+
         jButton16.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(169, 224, 49));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Si Jala/icons8_Back_To_25px.png"))); // NOI18N
-        jButton16.setText("Back");
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Regresar-Boton1.png"))); // NOI18N
         jButton16.setBorder(null);
         jButton16.setContentAreaFilled(false);
         jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton16.setRequestFocusEnabled(false);
+        jButton16.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Regresar-Boton2.png"))); // NOI18N
         jButton16.setVerifyInputWhenFocusTarget(false);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
             }
         });
-        jPanel7.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 110, -1));
+        jPanel3.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 140, 40));
 
-        jButton8.setBackground(new java.awt.Color(152, 201, 45));
-        jButton8.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(21, 25, 28));
-        jButton8.setText("Sign up");
-        jButton8.setBorder(null);
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton8.setFocusPainted(false);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 330, 40));
+        jTextField1.setBorder(null);
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 320, 30));
 
-        jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel_SoftZyd.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel_SoftZyd.setText("GAP Soft");
-        jPanel7.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 314, -1));
+        jTextField2.setBorder(null);
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 320, 30));
 
-        jLabel_inven.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
-        jLabel_inven.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel_inven.setText("HelpDesk");
-        jPanel7.add(jLabel_inven, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 380, 50));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo4.png"))); // NOI18N
+        jLabel2.setFocusable(false);
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, -30, 390, 690));
 
-        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 410, 560));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 400, 625));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -369,11 +314,7 @@ public static String mail;
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jLabel_SoftZyd.setVisible(false);
-        jLabel_inven.setVisible(false);
-        jPanel7.setVisible(true);
-        //       jLabel7.setVisible(false);
-        //       jLabel8.setVisible(false);
+        jPanel3.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -381,18 +322,8 @@ public static String mail;
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        jPanel7.setVisible(false);
-        jLabel_SoftZyd.setVisible(true);
-        jLabel_inven.setVisible(true);
+        jPanel3.setVisible(false);
     }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jTextField21MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField21MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21MouseMoved
-
-    private void jTextField18MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField18MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18MouseMoved
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
 
@@ -405,6 +336,10 @@ public static String mail;
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formComponentResized
 
     /**
      * @param args the command line arguments
@@ -452,14 +387,12 @@ public static String mail;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel_SoftZyd;
-    private javax.swing.JLabel jLabel_inven;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
