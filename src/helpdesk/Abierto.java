@@ -382,7 +382,12 @@ public static String Dato="";
     }//GEN-LAST:event_close1ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        chat objeto = new chat();
+        objeto.setLocationRelativeTo(objeto);
+        objeto.setVisible(true);
+         this.setVisible(false);
+         
+// TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
