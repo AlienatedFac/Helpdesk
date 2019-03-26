@@ -1,5 +1,6 @@
 package helpdesk;
 
+import java.awt.Dimension;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import java.sql.*;
@@ -7,6 +8,7 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 
 public class Login extends javax.swing.JFrame {
@@ -20,6 +22,7 @@ public static String mail;
     public Login() {
         initComponents();
         jPanel3.setVisible(false);
+        
     }
     
     public void ValidAccess()
@@ -124,6 +127,7 @@ public static String mail;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
+        setPreferredSize(new java.awt.Dimension(355, 625));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 formComponentResized(evt);
@@ -203,6 +207,7 @@ public static String mail;
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 210, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.png"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(700, 650));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 340, 650));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 338, 625));
