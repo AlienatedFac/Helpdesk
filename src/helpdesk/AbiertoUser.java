@@ -185,7 +185,7 @@ public static String Dato="";
                 editActionPerformed(evt);
             }
         });
-        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 410, 78, 41));
+        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, 78, 41));
 
         tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbproductos.setForeground(new java.awt.Color(153, 111, 39));
@@ -238,7 +238,16 @@ public static String Dato="";
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         // TODO add your handling code here:
-           editar objeto = new editar();
+             Dato = editar.getText();
+ if(Dato!="")
+ {
+     if(Dato!="ID")
+     {
+            JOptionPane.showMessageDialog(this, "Campo no llenado correctamente");
+     }
+     
+ }
+           edit objeto = new edit();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
          this.setVisible(false);

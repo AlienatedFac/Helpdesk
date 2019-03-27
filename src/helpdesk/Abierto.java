@@ -198,6 +198,11 @@ public static String Dato="";
 
         editar.setText("ID");
         editar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 191, 148)));
+        editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarActionPerformed(evt);
+            }
+        });
         jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(763, 527, 171, -1));
 
         edit.setBackground(new java.awt.Color(204, 191, 148));
@@ -258,7 +263,16 @@ public static String Dato="";
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         // TODO add your handling code here:
-           editar objeto = new editar();
+         Dato = editar.getText();
+ if(Dato!="")
+ {
+     if(Dato!="ID")
+     {
+            JOptionPane.showMessageDialog(this, "Campo no llenado correctamente");
+     }
+     
+ }
+           edit objeto = new edit();
         objeto.setLocationRelativeTo(objeto);
         objeto.setVisible(true);
          this.setVisible(false);
@@ -304,6 +318,10 @@ public static String Dato="";
          mostrardatos(dato);
          
     }//GEN-LAST:event_close1ActionPerformed
+
+    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarActionPerformed
 
     /**
      * @param args the command line arguments

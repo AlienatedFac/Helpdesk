@@ -217,7 +217,7 @@ public class Estatus extends javax.swing.JFrame {
                 answerActionPerformed(evt);
             }
         });
-        jPanel1.add(answer, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 481, -1, -1));
+        jPanel1.add(answer, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, -1, -1));
 
         regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Regresar-Boton1.png"))); // NOI18N
         regreso.setContentAreaFilled(false);
