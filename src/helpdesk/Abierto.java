@@ -117,16 +117,17 @@ public static String Dato="";
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 1020, -1));
 
         cerrados.setBackground(new java.awt.Color(204, 191, 148));
-        cerrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sistema_Locked_35452.png"))); // NOI18N
-        cerrados.setText("Cerrados");
+        cerrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cerrados-Boton1.png"))); // NOI18N
         cerrados.setBorder(null);
+        cerrados.setBorderPainted(false);
+        cerrados.setContentAreaFilled(false);
         cerrados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cerrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerradosActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 515, 100, 40));
+        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 515, 130, 40));
 
         asigna.setForeground(new java.awt.Color(204, 194, 151));
         asigna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Biotecnologia", "Software", "Fisioterapia", "Biomedica", "Direccion", "Web", "Sistemas" }));

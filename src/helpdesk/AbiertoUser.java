@@ -85,8 +85,8 @@ public static String Dato="";
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         cerrados = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         abrir = new javax.swing.JButton();
@@ -96,53 +96,62 @@ public static String Dato="";
         edit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbproductos = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 0, 51));
+        setPreferredSize(new java.awt.Dimension(1180, 670));
+        setSize(new java.awt.Dimension(1180, 670));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1170, 660));
+        jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/uni.png"))); // NOI18N
-        jLabel11.setText("jLabel11");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 25, 210, -1));
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro", 1, 68)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 99, 25));
-        jLabel1.setText("Abiertos");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Abiertos.png"))); // NOI18N
         jLabel1.setToolTipText("");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 76, 372, 92));
 
+        jLabel11.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/HelpdeskA.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 920, -1));
+
         cerrados.setBackground(new java.awt.Color(204, 191, 148));
-        cerrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sistema_Locked_35452.png"))); // NOI18N
-        cerrados.setText("Cerrados");
+        cerrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cerrados-Boton1.png"))); // NOI18N
         cerrados.setBorder(null);
+        cerrados.setBorderPainted(false);
+        cerrados.setContentAreaFilled(false);
         cerrados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrados.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cerrados-Boton2.png"))); // NOI18N
         cerrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerradosActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 410, 102, 41));
+        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 410, 130, 41));
 
         jButton2.setBackground(new java.awt.Color(204, 191, 148));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Historical_icon-icons.com_54175.png"))); // NOI18N
-        jButton2.setText("Expirados");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Expirados-Boton1.png"))); // NOI18N
         jButton2.setBorder(null);
+        jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Expirados-Boton2.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 410, 97, 41));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 410, 130, 41));
 
         abrir.setBackground(new java.awt.Color(204, 191, 148));
-        abrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/62917openfilefolder_109270.png"))); // NOI18N
-        abrir.setText("Abrir Nuevo");
+        abrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Abrir Nuevo-Boton1.png"))); // NOI18N
         abrir.setBorder(null);
+        abrir.setContentAreaFilled(false);
         abrir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        abrir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Abrir Nuevo-Boton2.png"))); // NOI18N
         abrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 abrirActionPerformed(evt);
@@ -160,10 +169,11 @@ public static String Dato="";
         jPanel1.add(estatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 422, 127, -1));
 
         ver.setBackground(new java.awt.Color(204, 191, 148));
-        ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1485476008-artboard-1_78539.png"))); // NOI18N
-        ver.setText("Ver Status");
+        ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ver Status-Boton1.png"))); // NOI18N
         ver.setBorder(null);
+        ver.setContentAreaFilled(false);
         ver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ver.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ver Status-Boton2.png"))); // NOI18N
         ver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 verActionPerformed(evt);
@@ -173,19 +183,20 @@ public static String Dato="";
 
         editar.setText("ID");
         editar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 191, 148)));
-        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 422, 189, -1));
+        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 189, -1));
 
         edit.setBackground(new java.awt.Color(204, 191, 148));
-        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edit_icon-icons.com_52382.png"))); // NOI18N
-        edit.setText("Editar");
+        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Editar-Boton1.png"))); // NOI18N
         edit.setBorder(null);
+        edit.setContentAreaFilled(false);
         edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        edit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Editar-Boton2.png"))); // NOI18N
         edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editActionPerformed(evt);
             }
         });
-        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, 78, 41));
+        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 400, 130, 41));
 
         tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbproductos.setForeground(new java.awt.Color(153, 111, 39));
@@ -203,18 +214,12 @@ public static String Dato="";
         tbproductos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tbproductos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 250, 898, 125));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 898, 125));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 490));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -335,6 +340,7 @@ public static String Dato="";
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbproductos;

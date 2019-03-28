@@ -139,10 +139,10 @@ public class Estatus extends javax.swing.JFrame {
         cuatrimestre = new javax.swing.JLabel();
         departamento = new javax.swing.JLabel();
         tema = new javax.swing.JLabel();
+        answer = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbproductos = new javax.swing.JTable();
         close = new javax.swing.JButton();
-        answer = new javax.swing.JButton();
         regreso = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -183,6 +183,16 @@ public class Estatus extends javax.swing.JFrame {
         tema.setText("Tema:");
         jPanel1.add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 194, -1, -1));
 
+        answer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Responder-Boton1.png"))); // NOI18N
+        answer.setContentAreaFilled(false);
+        answer.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Responder-Boton2.png"))); // NOI18N
+        answer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                answerActionPerformed(evt);
+            }
+        });
+        jPanel1.add(answer, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, -1, -1));
+
         tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbproductos.setForeground(new java.awt.Color(153, 111, 39));
         tbproductos.setModel(new javax.swing.table.DefaultTableModel(
@@ -201,23 +211,15 @@ public class Estatus extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 325, 547, 125));
 
-        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1486564399-close_81512.png"))); // NOI18N
-        close.setText("Cerrar");
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cerrar-Boton1.png"))); // NOI18N
+        close.setContentAreaFilled(false);
+        close.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cerrar-Boton2.png"))); // NOI18N
         close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 closeActionPerformed(evt);
             }
         });
         jPanel1.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 481, -1, -1));
-
-        answer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/email_reply_15033.png"))); // NOI18N
-        answer.setText("Responder ");
-        answer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                answerActionPerformed(evt);
-            }
-        });
-        jPanel1.add(answer, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, -1, -1));
 
         regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Regresar-Boton1.png"))); // NOI18N
         regreso.setContentAreaFilled(false);
