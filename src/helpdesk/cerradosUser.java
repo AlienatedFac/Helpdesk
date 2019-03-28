@@ -22,6 +22,7 @@ public class cerradosUser extends javax.swing.JFrame {
      */  public static String kk;
     public cerradosUser() {
         initComponents();
+        setLocationRelativeTo(null);
          Login objeto1=new Login();
         
       kk= objeto1.mail;

@@ -10,7 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +23,7 @@ public class Abierto extends javax.swing.JFrame {
     public static String kk;
     public Abierto() {
         initComponents();
+        setLocationRelativeTo(null);
         Login objeto=new Login();
         
       kk= objeto.asignado;
@@ -127,13 +127,13 @@ public static String Dato="";
                 cerradosActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 515, 130, 40));
+        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 510, 130, 40));
 
         asigna.setForeground(new java.awt.Color(204, 194, 151));
         asigna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Biotecnologia", "Software", "Fisioterapia", "Biomedica", "Direccion", "Web", "Sistemas" }));
         asigna.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 153, 0)));
         asigna.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(asigna, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 572, 118, -1));
+        jPanel1.add(asigna, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 410, 118, -1));
 
         jButton2.setBackground(new java.awt.Color(204, 191, 148));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Expirados-Boton1.png"))); // NOI18N
@@ -146,7 +146,7 @@ public static String Dato="";
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 515, 137, 41));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 470, 137, 41));
 
         abrir.setBackground(new java.awt.Color(204, 191, 148));
         abrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Abrir Nuevo-Boton1.png"))); // NOI18N
@@ -160,16 +160,15 @@ public static String Dato="";
                 abrirActionPerformed(evt);
             }
         });
-        jPanel1.add(abrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 515, 133, 41));
+        jPanel1.add(abrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 430, 133, 41));
 
-        estatus.setText("ID");
         estatus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 191, 148)));
         estatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 estatusActionPerformed(evt);
             }
         });
-        jPanel1.add(estatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 527, 127, -1));
+        jPanel1.add(estatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, 127, -1));
 
         ver.setBackground(new java.awt.Color(204, 191, 148));
         ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ver Status-Boton1.png"))); // NOI18N
@@ -182,7 +181,7 @@ public static String Dato="";
                 verActionPerformed(evt);
             }
         });
-        jPanel1.add(ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 515, 133, 41));
+        jPanel1.add(ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 350, 133, 41));
 
         close1.setBackground(new java.awt.Color(255, 255, 255));
         close1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Buscar-Boton1.png"))); // NOI18N
@@ -195,16 +194,15 @@ public static String Dato="";
                 close1ActionPerformed(evt);
             }
         });
-        jPanel1.add(close1, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 562, -1, -1));
+        jPanel1.add(close1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 390, -1, -1));
 
-        editar.setText("ID");
         editar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 191, 148)));
         editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editarActionPerformed(evt);
             }
         });
-        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(763, 527, 171, -1));
+        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, 171, -1));
 
         edit.setBackground(new java.awt.Color(204, 191, 148));
         edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Editar-Boton1.png"))); // NOI18N
@@ -217,7 +215,7 @@ public static String Dato="";
                 editActionPerformed(evt);
             }
         });
-        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 515, 141, 41));
+        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 310, 141, 41));
 
         tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbproductos.setForeground(new java.awt.Color(153, 111, 39));
@@ -235,7 +233,7 @@ public static String Dato="";
         tbproductos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tbproductos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 355, 898, 125));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 330, 740, 200));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 660));

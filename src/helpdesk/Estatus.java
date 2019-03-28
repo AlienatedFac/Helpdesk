@@ -16,7 +16,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,7 +32,7 @@ public class Estatus extends javax.swing.JFrame {
     public static String ID;
  public Estatus() {
         initComponents();
-        
+        setLocationRelativeTo(null);
         Abierto objeto= new Abierto();
     identificacion.setText(objeto.Dato);
     ID=objeto.Dato;
@@ -144,46 +143,72 @@ public class Estatus extends javax.swing.JFrame {
         tbproductos = new javax.swing.JTable();
         close = new javax.swing.JButton();
         regreso = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        correo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        correo.setForeground(new java.awt.Color(255, 255, 255));
         correo.setText("Correo:");
         jPanel1.add(correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 107, -1, -1));
 
+        nombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
         nombre.setText("Nombre:");
         jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 132, -1, -1));
 
+        carrera.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        carrera.setForeground(new java.awt.Color(255, 255, 255));
         carrera.setText("Carrera:");
         jPanel1.add(carrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 157, -1, -1));
 
+        asignado.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        asignado.setForeground(new java.awt.Color(255, 255, 255));
         asignado.setText("Asignado:");
         jPanel1.add(asignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 182, -1, -1));
 
+        problema.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        problema.setForeground(new java.awt.Color(255, 255, 255));
         problema.setText("Problema:");
         jPanel1.add(problema, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 214, -1, -1));
 
+        problem.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        problem.setForeground(new java.awt.Color(255, 255, 255));
         problem.setText("Correo:");
         jPanel1.add(problem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 246, 565, 73));
 
+        identificacion.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        identificacion.setForeground(new java.awt.Color(255, 255, 255));
         identificacion.setText("ID:");
         jPanel1.add(identificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 37, -1, -1));
 
+        Fecha.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        Fecha.setForeground(new java.awt.Color(255, 255, 255));
         Fecha.setText("Fecha:");
         jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 69, -1, -1));
 
+        cuatrimestre.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        cuatrimestre.setForeground(new java.awt.Color(255, 255, 255));
         cuatrimestre.setText("Cuatrimestre:");
         jPanel1.add(cuatrimestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 132, -1, -1));
 
+        departamento.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        departamento.setForeground(new java.awt.Color(255, 255, 255));
         departamento.setText("Departamento:");
         jPanel1.add(departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 157, -1, -1));
 
+        tema.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        tema.setForeground(new java.awt.Color(255, 255, 255));
         tema.setText("Tema:");
         jPanel1.add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 194, -1, -1));
 
         answer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Responder-Boton1.png"))); // NOI18N
+        answer.setBorder(null);
+        answer.setBorderPainted(false);
         answer.setContentAreaFilled(false);
         answer.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Responder-Boton2.png"))); // NOI18N
         answer.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +237,8 @@ public class Estatus extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 325, 547, 125));
 
         close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cerrar-Boton1.png"))); // NOI18N
+        close.setBorder(null);
+        close.setBorderPainted(false);
         close.setContentAreaFilled(false);
         close.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cerrar-Boton2.png"))); // NOI18N
         close.addActionListener(new java.awt.event.ActionListener() {
@@ -222,6 +249,8 @@ public class Estatus extends javax.swing.JFrame {
         jPanel1.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 481, -1, -1));
 
         regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Regresar-Boton1.png"))); // NOI18N
+        regreso.setBorder(null);
+        regreso.setBorderPainted(false);
         regreso.setContentAreaFilled(false);
         regreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,16 +259,12 @@ public class Estatus extends javax.swing.JFrame {
         });
         jPanel1.add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 481, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 520));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -350,6 +375,7 @@ String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
     private javax.swing.JLabel cuatrimestre;
     private javax.swing.JLabel departamento;
     private javax.swing.JLabel identificacion;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombre;

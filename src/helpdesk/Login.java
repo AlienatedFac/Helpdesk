@@ -15,14 +15,28 @@ public class Login extends javax.swing.JFrame {
 public static String asignado;
 public static String dato;
 public static String mail;
+
+
+
     conectar cc = new conectar();
     Connection cn=cc.conexion();
     
     
     public Login() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(null);
         jPanel3.setVisible(false);
         
+    }
+
+    public void BigSize()
+    {
+        this.setSize(730, 650);
+    }
+    public void BackSize()
+    {
+        this.setSize(340, 650);
     }
     
     public void ValidAccess()
@@ -127,7 +141,7 @@ public static String mail;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
-        setPreferredSize(new java.awt.Dimension(355, 625));
+        setPreferredSize(new java.awt.Dimension(340, 650));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 formComponentResized(evt);
@@ -183,6 +197,7 @@ public static String mail;
         Pass.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         Pass.setBorder(null);
         jPanel1.add(Pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 260, 40));
+        Pass.getAccessibleContext().setAccessibleName("");
 
         jButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -208,7 +223,8 @@ public static String mail;
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.png"))); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(700, 650));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 340, 650));
+        jLabel1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 360, 650));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 338, 625));
 
@@ -229,7 +245,7 @@ public static String mail;
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 40, 40));
+        jPanel3.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 40, 40));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Si Jala/icons8_Minus_32px_1.png"))); // NOI18N
         jButton11.setToolTipText("Minimize");
@@ -250,11 +266,11 @@ public static String mail;
                 jButton11ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 40, 40));
+        jPanel3.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 40, 40));
 
         jLabel16.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Email");
+        jLabel16.setText("Matricula");
         jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 314, -1));
 
         jLabel18.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
@@ -292,10 +308,10 @@ public static String mail;
         jPanel3.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 140, 40));
 
         jTextField1.setBorder(null);
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 320, 30));
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 260, 40));
 
         jTextField2.setBorder(null);
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 320, 30));
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 260, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo4.png"))); // NOI18N
         jLabel2.setFocusable(false);
@@ -319,6 +335,7 @@ public static String mail;
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        BigSize();
         jPanel3.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -327,6 +344,7 @@ public static String mail;
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        BackSize();
         jPanel3.setVisible(false);
     }//GEN-LAST:event_jButton16ActionPerformed
 

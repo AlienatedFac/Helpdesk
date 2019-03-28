@@ -21,6 +21,7 @@ public class cerrados extends javax.swing.JFrame {
      */
     public cerrados() {
         initComponents();
+        setLocationRelativeTo(null);
            Login objeto=new Login();
         
       kk= objeto.asignado;
@@ -111,7 +112,7 @@ public class cerrados extends javax.swing.JFrame {
                 abiertosActionPerformed(evt);
             }
         });
-        jPanel1.add(abiertos, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 450, 140, 40));
+        jPanel1.add(abiertos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 140, 40));
 
         jButton2.setBackground(new java.awt.Color(204, 191, 148));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Expirados-Boton1.png"))); // NOI18N
@@ -124,10 +125,10 @@ public class cerrados extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 150, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 150, 40));
 
         reabrir.setText("ID");
-        jPanel1.add(reabrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 147, -1));
+        jPanel1.add(reabrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 147, -1));
 
         reop.setBackground(new java.awt.Color(204, 191, 148));
         reop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Re_Abrir-Boton1.png"))); // NOI18N
@@ -135,7 +136,7 @@ public class cerrados extends javax.swing.JFrame {
         reop.setContentAreaFilled(false);
         reop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reop.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Re_Abrir-Boton2.png"))); // NOI18N
-        jPanel1.add(reop, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, 160, 40));
+        jPanel1.add(reop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 160, 40));
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 99, 25));
@@ -161,10 +162,10 @@ public class cerrados extends javax.swing.JFrame {
         tbproductos.setSelectionBackground(new java.awt.Color(204, 195, 151));
         jScrollPane1.setViewportView(tbproductos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 216, 803, 211));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 520, 211));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 510));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 510));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

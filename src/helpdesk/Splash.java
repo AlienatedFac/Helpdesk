@@ -7,6 +7,7 @@ public class Splash extends javax.swing.JFrame {
      */
     public Splash() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
      public void LoadingIt(){ /*Método que contiene el codigo del loading-bar y splash inicial del programa*/

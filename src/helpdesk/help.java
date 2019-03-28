@@ -25,6 +25,7 @@ public class help extends javax.swing.JFrame {
         Calendar cal=Calendar.getInstance(); 
 String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
         initComponents();
+        setLocationRelativeTo(null);
        fecha.setText(date);
     }
 
@@ -145,7 +146,6 @@ String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
         jButton1.setBackground(new java.awt.Color(204, 191, 148));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Enviar-Boton1.png"))); // NOI18N
-        jButton1.setActionCommand("");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Enviar-Boton2.png"))); // NOI18N

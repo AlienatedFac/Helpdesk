@@ -10,7 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +23,7 @@ public class AbiertoUser extends javax.swing.JFrame {
     public static String kk;
     public AbiertoUser() {
         initComponents();
+        setLocationRelativeTo(null);
         Login objeto=new Login();
         
       kk= objeto.mail;
@@ -100,7 +100,6 @@ public static String Dato="";
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 0, 51));
-        setPreferredSize(new java.awt.Dimension(1180, 670));
         setSize(new java.awt.Dimension(1180, 670));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -131,7 +130,7 @@ public static String Dato="";
                 cerradosActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 410, 130, 41));
+        jPanel1.add(cerrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 130, 41));
 
         jButton2.setBackground(new java.awt.Color(204, 191, 148));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Expirados-Boton1.png"))); // NOI18N
@@ -144,7 +143,7 @@ public static String Dato="";
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 410, 130, 41));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 130, 41));
 
         abrir.setBackground(new java.awt.Color(204, 191, 148));
         abrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Abrir Nuevo-Boton1.png"))); // NOI18N
@@ -157,7 +156,7 @@ public static String Dato="";
                 abrirActionPerformed(evt);
             }
         });
-        jPanel1.add(abrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 118, 41));
+        jPanel1.add(abrir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 118, 41));
 
         estatus.setText("ID");
         estatus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 191, 148)));
@@ -166,7 +165,7 @@ public static String Dato="";
                 estatusActionPerformed(evt);
             }
         });
-        jPanel1.add(estatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 422, 127, -1));
+        jPanel1.add(estatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 127, -1));
 
         ver.setBackground(new java.awt.Color(204, 191, 148));
         ver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ver Status-Boton1.png"))); // NOI18N
@@ -179,11 +178,11 @@ public static String Dato="";
                 verActionPerformed(evt);
             }
         });
-        jPanel1.add(ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 410, -1, 41));
+        jPanel1.add(ver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, 41));
 
         editar.setText("ID");
         editar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 191, 148)));
-        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 189, -1));
+        jPanel1.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 189, -1));
 
         edit.setBackground(new java.awt.Color(204, 191, 148));
         edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Editar-Boton1.png"))); // NOI18N
@@ -196,7 +195,7 @@ public static String Dato="";
                 editActionPerformed(evt);
             }
         });
-        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 400, 130, 41));
+        jPanel1.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 130, 41));
 
         tbproductos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbproductos.setForeground(new java.awt.Color(153, 111, 39));
@@ -214,10 +213,10 @@ public static String Dato="";
         tbproductos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tbproductos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 898, 125));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 460, 125));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 490));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 610));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 670));
 

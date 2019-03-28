@@ -37,6 +37,7 @@ public class edit extends javax.swing.JFrame {
         Calendar cal=Calendar.getInstance(); 
 String date=cal.get(cal.DATE)+"/"+cal.get(cal.MONTH)+"/"+cal.get(cal.YEAR);
         initComponents();
+        setLocationRelativeTo(null);
        fecha.setText(date);
 
        
